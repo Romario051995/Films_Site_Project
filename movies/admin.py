@@ -19,6 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
     """Категории"""
     list_display = ("id", "name", "url")
     list_display_links = ("name",)
+    prepopulated_fields = {'url': ('name',)}
 
 
 class ReviewInline(admin.TabularInline):

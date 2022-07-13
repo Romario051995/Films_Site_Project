@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     'movies',
 
+    'widget_tweaks',
     'allauth',
     'allauth.account',
 ]
