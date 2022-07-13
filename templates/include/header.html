@@ -15,28 +15,43 @@
             <label for="drop" class="toggle">Menu</label>
             <input type="checkbox" id="drop">
             <ul class="menu mt-2">
-                <li class="active"><a href="/">Главная</a></li>
+                <li class=""><a href="/">Главная</a></li>
                 <li>
                     <!-- First Tier Drop Down -->
-                    <label for="drop-2" class="toggle">Категории <span
-                            class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                    <a href="">Категории <span class="fa fa-angle-down"
-                                                aria-hidden="true"></span></a>
-                    <input type="checkbox" id="drop-2">
+
+                </li>
+                <li>
+                 {% if user.is_authenticated %}
                     <ul>
                         {% get_categories as categories %}
                         {% for category in categories %}
                         <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
                         {% endfor %}
                     </ul>
-                </li>
-                <li><a href="/"
-                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Вход</a>
-                </li>
-            </ul>
-        </nav>
+
+                    <a href="">Категории <span class="fa fa-angle-down"
+                                               aria-hidden="true"></span></a>
+                <li>
+                    <a class="blink" style="color: rgb(100, 255, 100)">
+                     <span> {{ user.username }}</span>
+
+                        <a href="{% url 'account_logout' %}"
+                           style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                            Выход
+                        </a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}"
+                           style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                            Вход
+                        </a>
+                         <a href="{% url 'account_signup' %}"
+                           style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                            Регистрация
+                        </a>
+                    {% endif %}
+
         <!-- //nav -->
-    </div>
+
 </header>
 <!-- //header -->
 <!--/banner-->
