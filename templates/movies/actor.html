@@ -1,6 +1,6 @@
 {% extends 'movies/base.html' %}
 {% load static %}
-{% block title %} {{ actor.name }} {% endblock title %}
+{% block title %} {{ actor.name  }} {% endblock title %}
 {% block container %}
     <div class="container py-md-3">
 {% endblock container %}
@@ -39,12 +39,13 @@
                 </ul>
             </div>
         </div>
+
         <div class="row sub-para-w3layouts mt-5">
             <h3 class="shop-sing editContent">
                 О {{ actor.name }}
             </h3>
             <p class="editContent">
-                {{ actor.description|safe }}
+                {{ actor.description }}
             </p>
         </div>
     </div>
