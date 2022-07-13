@@ -10,6 +10,8 @@ class ReviewForm(forms.ModelForm):
         fields = ("name", "email", "text")
 
 
+
+
 class RatingForm(forms.ModelForm):
     """Форма добавления рейтинга"""
     star = forms.ModelChoiceField(

@@ -1,6 +1,6 @@
 {% extends "account/base.html" %}
 {% block header %} bg2 {% endblock header %}
-{% load widget_tweaks %}
+
 
 
 
@@ -11,9 +11,7 @@
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
-  {% for field in form %}
-    {% render_field field class+="css_class_1 css_class_2" %}
-  {% endfor %}
+   {{ form.as_p }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}

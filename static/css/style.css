@@ -1796,3 +1796,6 @@ body {
     from { opacity: 1; /* Непрозрачный текст */ }
     to { opacity: 0.4; /* Прозрачный текст */ }
    }
+
+.field{font-weight:bold;}
+    .error{color:red;}
