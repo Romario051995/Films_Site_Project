@@ -3,14 +3,33 @@
 <header class="header">
     <div class="container-fluid px-lg-5">
         <!-- nav -->
-        <nav class="py-4">
-            <div id="logo">
-                <h1><a  class="editContent"
-                       style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(200, 200, 255); font-size: 35px; background-color: rgba(0, 0, 0, 0);
-                        font-family: Source Sans Pro;, sans-serif;">WorldMovie</a>
-                </h1>
+        {% if user.is_authenticated %}
 
+        <nav class="py-4">
+            <div id="logo" >
+                <h1 >
+                   <div class="couponcode">
+                    <a class="editcontent"
+                       style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(200, 200, 255); font-size: 35px; background-color: rgba(0, 0, 0, 0);
+                        font-family: Source Sans Pro;, sans-serif;">
+                    WorldMovie</a>
+                    <span class="coupontooltip" >
+                    <div class="media py-5" >
+                     <img class="round"  src="/static/images/mironov.jpg/" width="80" height="80" >
+                </h1>
             </div>
+        </audio>
+            {% else %}
+            <nav class="py-4">
+            <div id="logo" >
+                <h1 >
+                    <a class="editcontent"
+                       style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(200, 200, 255); font-size: 35px; background-color: rgba(0, 0, 0, 0);
+                        font-family: Source Sans Pro;, sans-serif;">
+                    WorldMovie</a>
+                </h1>
+            </div>
+            {% endif %}
 
             <label for="drop" class="toggle">Menu</label>
             <input type="checkbox" id="drop">

@@ -1788,7 +1788,7 @@ body {
     top: 0;
     left: 0;
 }
-
+ // Мигание Текста
 .blink {
     animation: blink 2s infinite; /* Параметры анимации */
    }
@@ -1799,3 +1799,38 @@ body {
 
 .field{font-weight:bold;}
     .error{color:red;}
+
+/* Появление изображния */
+
+.couponcode:hover .coupontooltip {
+    display: block;
+}
+
+
+.coupontooltip {
+    display: none;
+    background: ;
+    margin-left: 28px;
+    padding: 25px;
+    position: absolute;
+    top: 10px; left: 10x;
+    z-index: 500;
+    width:100x;
+    height:100px;
+}
+
+.couponcode {
+    margin:5px;
+}
+
+/* Вращение изображния */
+
+.round {
+    border-radius: 50%; /* Круглые изображения */
+    transition: 0.5s; /* Время поворота */
+   }
+   .round:hover {
+    transform: rotate(360deg); /* Поворачиваем на 360 градусов */
+   }
+
+audio {display:none;}
